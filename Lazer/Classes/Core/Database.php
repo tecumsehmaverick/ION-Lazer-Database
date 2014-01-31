@@ -228,7 +228,7 @@ if( ! defined('BASEPATH')) exit('No direct script access allowed');
 
          if (Helpers\Data::table($name)->exists() && Helpers\Config::table($name)->exists())
          {
-             throw new LazerException('helper\Table "'.$name.'" already exists');
+             throw new LazerException('Helpers\Data "'.$name.'" already exists');
          }
 
          $types = array_values($fields);
@@ -247,6 +247,22 @@ if( ! defined('BASEPATH')) exit('No direct script access allowed');
 
          Helpers\Data::table($name)->put(array());
          Helpers\Config::table($name)->put($data);
+     }
+
+     /**
+      * Check Table Exist or Not
+      *
+      * @param $name
+      * @return bool
+      */
+     public static function exist($name)
+     {
+         if (Helpers\Data::table($name)->exists() && Helpers\Config::table($name)->exists())
+         {
+             return TRUE;
+         }
+
+         return FALSE;
      }
 
      /**
