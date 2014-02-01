@@ -45,7 +45,6 @@ if( ! defined('BASEPATH')) exit('No direct script access allowed');
      {
          if (!empty($this->type))
          {
-             log_message('ERROR', '#getPath :: ' . $this->data_path(LAZER_DATA_PATH).$this->name.'.'.$this->type.'.json');
              return $this->data_path(LAZER_DATA_PATH).$this->name.'.'.$this->type.'.json';
          }
          else
@@ -125,7 +124,7 @@ if( ! defined('BASEPATH')) exit('No direct script access allowed');
              }
          }
 
-         log_message('ERROR', '#dataPath :: ' . $dataPath);
+         // log_message('ERROR', '#dataPath :: ' . $dataPath);
 
          return $dataPath;
      }

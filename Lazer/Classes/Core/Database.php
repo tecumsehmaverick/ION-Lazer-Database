@@ -227,9 +227,7 @@ if( ! defined('BASEPATH')) exit('No direct script access allowed');
          $fields = Helpers\Validate::arrToLower($fields);
 
          if (Helpers\Data::table($name)->exists() && Helpers\Config::table($name)->exists())
-         {
-             throw new LazerException('Helpers\Data "'.$name.'" already exists');
-         }
+             return log_message('ERROR', 'Helpers\Data "'.$name.'" already exists');
 
          $types = array_values($fields);
 
